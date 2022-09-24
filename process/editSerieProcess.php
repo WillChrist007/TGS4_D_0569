@@ -9,8 +9,13 @@
         $realese = $_POST['realese'];  
         $episode = $_POST['episode'];  
         $season = $_POST['season']; 
+
+        foreach ($genre as $oneGenre) {
+            $output.= $oneGenre;
+            $output.= ", ";
+        }
         
-        $query = mysqli_query($con, "UPDATE series SET name='$name', genre='$genre', realese='$realese', episode='$episode', season='$season' WHERE id='$id'") or die(mysqli_error($con)); 
+        $query = mysqli_query($con, "UPDATE series SET name='$name', genre='$output', realese='$realese', episode='$episode', season='$season' WHERE id='$id'") or die(mysqli_error($con)); 
         
         if($query){
             echo 

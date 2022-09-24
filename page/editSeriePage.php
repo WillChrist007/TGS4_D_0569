@@ -26,7 +26,12 @@
         <div class="field">
             <label class="label">Genre</label>
             <div class="control">
-                <input class="form-control" name="genre" type="text"  value="<?php echo $data['genre']; ?>">
+                <select class="form-select" aria-label="Default select example" name="genre[]" id="genre" multiple>
+                    <option value="<?php echo $data['genre'];?>" selected disabled hidden><?php echo $data['genre'];?></option>
+                    <option value="aksi">Aksi</option>
+                    <option value="superhero">Superhero</option>
+                    <option value="fantasi">Fantasi</option>
+                </select>
             </div>
         </div>
         <br>
@@ -62,9 +67,28 @@
     </form>
 </div>
 </aside>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#genre").select2({
+
+            placeholder: " genre"
+
+        });
+
+    });
+</script>
+
 </body>
 
 </html>

@@ -9,7 +9,7 @@ include '../component/sidebar.php'
     </div>
     <hr>
     <!-- PROFILE -->
-    <form action="../process/editProfileProcess.php" method="post">
+    <form>
         <div class="field">
             <label class="label">Name</label>
             <div class="control">

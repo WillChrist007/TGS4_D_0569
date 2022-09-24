@@ -10,8 +10,15 @@ if (isset($_POST['add'])) {
     $season = $_POST['season'];
     $synopsis = $_POST['synopsis'];
 
+    $output="";
+
+    foreach ($genre as $oneGenre) {
+        $output.= $oneGenre;
+        $output.= ", ";
+    }
+
     $query = mysqli_query($con, "INSERT INTO series(name, genre, realese, episode, season, synopsis)
-    VALUES ('$name', '$genre', '$realese', '$episode', '$season', '$synopsis')")
+    VALUES ('$name', '$output', '$realese', '$episode', '$season', '$synopsis')")
     or die(mysqli_error($con));
 
     if ($query) {
